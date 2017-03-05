@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9D4B324A-9C45-4893-8F9C-296096029C39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A816092B-146E-4228-AF41-548A16850F37}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Stactive", "src\Stactive\Stactive.xproj", "{E5824D29-F690-4B50-8DB2-514CF62EECE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5824D29-F690-4B50-8DB2-514CF62EECE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5824D29-F690-4B50-8DB2-514CF62EECE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5824D29-F690-4B50-8DB2-514CF62EECE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5824D29-F690-4B50-8DB2-514CF62EECE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5824D29-F690-4B50-8DB2-514CF62EECE9} = {9D4B324A-9C45-4893-8F9C-296096029C39}
+	EndGlobalSection
+EndGlobal
