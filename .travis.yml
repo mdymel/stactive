@@ -6,3 +6,7 @@ solution: Stactive.sln
 script:
   - dotnet restore
   - dotnet build
+  - dotnet test src\Stactive.Tests\Stactive.Tests.csproj
+
+notifications:
+  email: false
