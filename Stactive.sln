@@ -16,7 +16,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stactive", "src\Stactive\St
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stactive.Tests", "src\Stactive.Tests\Stactive.Tests.csproj", "{FCEA361D-1868-4875-A4FA-9BF1D1BC4FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stactive.Sample", "src\Stactive.Sample\Stactive.Sample.csproj", "{C5637219-D9F6-4691-AB59-20F6F1D27A31}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{5666DAE2-1B96-44CB-8015-069B53865AF0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stactive.Sample", "samples\Stactive.Sample\Stactive.Sample.csproj", "{FA174B6D-B060-4BA9-B7E0-F45235C46EAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,10 +34,10 @@ Global
 		{FCEA361D-1868-4875-A4FA-9BF1D1BC4FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCEA361D-1868-4875-A4FA-9BF1D1BC4FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCEA361D-1868-4875-A4FA-9BF1D1BC4FED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C5637219-D9F6-4691-AB59-20F6F1D27A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5637219-D9F6-4691-AB59-20F6F1D27A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5637219-D9F6-4691-AB59-20F6F1D27A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5637219-D9F6-4691-AB59-20F6F1D27A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA174B6D-B060-4BA9-B7E0-F45235C46EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA174B6D-B060-4BA9-B7E0-F45235C46EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA174B6D-B060-4BA9-B7E0-F45235C46EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA174B6D-B060-4BA9-B7E0-F45235C46EAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +45,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E5824D29-F690-4B50-8DB2-514CF62EECE9} = {9D4B324A-9C45-4893-8F9C-296096029C39}
 		{FCEA361D-1868-4875-A4FA-9BF1D1BC4FED} = {9D4B324A-9C45-4893-8F9C-296096029C39}
-		{C5637219-D9F6-4691-AB59-20F6F1D27A31} = {9D4B324A-9C45-4893-8F9C-296096029C39}
+		{FA174B6D-B060-4BA9-B7E0-F45235C46EAC} = {5666DAE2-1B96-44CB-8015-069B53865AF0}
 	EndGlobalSection
 EndGlobal
