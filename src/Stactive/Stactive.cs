@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 
 namespace Stactive
@@ -14,6 +13,9 @@ namespace Stactive
             {
                 context.Items[StactiveEventsKey] = new List<StactiveEvent>();
             }
+            var list = context.Items[StactiveEventsKey] as List<StactiveEvent>;
+            if (list is null) throw new StactiveException("Stactive events is not a List<StactiveEvent>");
+            list.Add(stactiveEvent);
         }
     }
 }
