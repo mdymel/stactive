@@ -32,7 +32,7 @@ namespace Stactive.Tests
         [Fact]
         public void AddEvent_adds_event_to_the_list()
         {
-            var stactiveEvent = new StactiveEvent();
+            var stactiveEvent = new StactiveEvent("asd");
             var context = CreateHttpContext();
             Stactive.AddEvent(context, stactiveEvent);
 
