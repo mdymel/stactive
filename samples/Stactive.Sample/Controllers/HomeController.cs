@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Stactive.Sample.Controllers
 {
@@ -10,6 +6,7 @@ namespace Stactive.Sample.Controllers
     {
         public IActionResult Index()
         {
+            Stactive.AddEvent(HttpContext, new StactiveEvent("Home Index view"));
             return View();
         }
 

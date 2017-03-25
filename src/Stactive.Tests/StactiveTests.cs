@@ -8,8 +8,6 @@ namespace Stactive.Tests
 {
     public class StactiveTests
     {
-        const string StactiveEventsKey = "StactiveEvents";
-        
         private static HttpContext CreateHttpContext()
         {
             var context = new Mock<HttpContext>();
@@ -24,9 +22,9 @@ namespace Stactive.Tests
             var context = CreateHttpContext();
             Stactive.AddEvent(context, null);
 
-            context.Items.ShouldContainKey(StactiveEventsKey);
-            context.Items[StactiveEventsKey].ShouldNotBeNull();
-            context.Items[StactiveEventsKey].ShouldBeOfType<List<StactiveEvent>>();
+            context.Items.ShouldContainKey(Stactive.StactiveEventsKey);
+            context.Items[Stactive.StactiveEventsKey].ShouldNotBeNull();
+            context.Items[Stactive.StactiveEventsKey].ShouldBeOfType<List<StactiveEvent>>();
         }
 
         [Fact]
@@ -36,7 +34,7 @@ namespace Stactive.Tests
             var context = CreateHttpContext();
             Stactive.AddEvent(context, stactiveEvent);
 
-            var eventsList = context.Items[StactiveEventsKey] as List<StactiveEvent>;
+            var eventsList = context.Items[Stactive.StactiveEventsKey] as List<StactiveEvent>;
             eventsList.ShouldContain(stactiveEvent);
         }
 
@@ -44,7 +42,7 @@ namespace Stactive.Tests
         public void AddEvent_throws_if_items_is_not_a_list()
         {
             var context = CreateHttpContext();
-            context.Items[StactiveEventsKey] = "";
+            context.Items[Stactive.StactiveEventsKey] = "";
             var ex = Should.Throw<StactiveException>(() => Stactive.AddEvent(context, null));
             ex.Message.ShouldBe("Stactive events is not a List<StactiveEvent>");
         }
