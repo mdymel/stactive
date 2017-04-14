@@ -43,6 +43,8 @@ namespace Stactive.Sample
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddStactive();
+
             services.AddMvc();
 
             // Add application services.

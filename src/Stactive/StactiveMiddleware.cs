@@ -4,27 +4,37 @@ using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
+// ReSharper disable ConsiderUsingConfigureAwait
+
 namespace Stactive
 {
     public class StactiveMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger _logger;
+        private readonly IRequestLogger _requestLogger;
 
-        public StactiveMiddleware(RequestDelegate next, ILogger<StactiveMiddleware> logger)
+        public StactiveMiddleware(
+            RequestDelegate next,
+            IRequestLogger requestLogger,
+            ILogger<StactiveMiddleware> logger)
         {
             _next = next;
             _logger = logger;
+
+            _requestLogger = requestLogger;
         }
 
         public async Task Invoke(HttpContext context)
         {
-            var sw = Stopwatch.StartNew();
+            Stopwatch sw = Stopwatch.StartNew();
             // Call the next delegate/middleware in the pipeline
             await _next(context);
             sw.Stop();
 
             _logger.LogInformation($"Request {context.Request.Path} took {sw.ElapsedMilliseconds}ms");
+
+            await _requestLogger.LogRequest(context, sw.ElapsedMilliseconds);
 
             if (context.Items.ContainsKey(Stactive.StactiveEventsKey))
             {
