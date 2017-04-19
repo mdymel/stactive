@@ -43,7 +43,7 @@ namespace Stactive.Sample
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddStactive();
+            services.AddStactive(options => options.UseMongoDb());
 
             services.AddMvc();
 

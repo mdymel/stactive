@@ -5,6 +5,8 @@ namespace Stactive
 {
     public static class Stactive
     {
+        internal static StactiveOptions Options { get; } = new StactiveOptions();
+
         public const string StactiveEventsKey = "StactiveEvents";
 
         public static void AddEvent(HttpContext context, StactiveEvent stactiveEvent)
