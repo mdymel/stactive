@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Stactive.Loggers;
 
 namespace Stactive
 {
@@ -11,12 +11,9 @@ namespace Stactive
             return builder.UseMiddleware<StactiveMiddleware>();
         }
 
-        public static IServiceCollection AddStactive(this IServiceCollection services, Action<StactiveOptions> optionsBuilder)
+        public static IServiceCollection AddStactive(this IServiceCollection services)
         {
             services.AddTransient<IRequestLogger, RequestLogger>();
-
-            optionsBuilder.Invoke(Stactive.Options);
-
             return services;
         }
     }

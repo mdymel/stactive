@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Stactive.Core.Models;
+using Stactive.Loggers;
 
 // ReSharper disable ConsiderUsingConfigureAwait
 
@@ -31,9 +33,7 @@ namespace Stactive
             // Call the next delegate/middleware in the pipeline
             await _next(context);
             sw.Stop();
-
-            _logger.LogInformation($"Request {context.Request.Path} took {sw.ElapsedMilliseconds}ms");
-
+            
             await _requestLogger.LogRequest(context, sw.ElapsedMilliseconds);
 
             if (context.Items.ContainsKey(Stactive.StactiveEventsKey))

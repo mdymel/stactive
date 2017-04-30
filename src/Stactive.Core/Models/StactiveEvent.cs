@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stactive
+namespace Stactive.Core.Models
 {
     public class StactiveEvent
     {

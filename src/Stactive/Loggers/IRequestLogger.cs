@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace Stactive
+namespace Stactive.Loggers
 {
     public interface IRequestLogger
     {

@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Moq;
 using Shouldly;
+using Stactive.Core;
+using Stactive.Core.Models;
 using Xunit;
 
 namespace Stactive.Tests

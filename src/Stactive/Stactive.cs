@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
+using Stactive.Core;
+using Stactive.Core.Models;
 
 namespace Stactive
 {
     public static class Stactive
     {
-        internal static StactiveOptions Options { get; } = new StactiveOptions();
-
         public const string StactiveEventsKey = "StactiveEvents";
 
         public static void AddEvent(HttpContext context, StactiveEvent stactiveEvent)

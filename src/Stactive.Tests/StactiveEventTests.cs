@@ -1,5 +1,7 @@
 ﻿using System;
 using Shouldly;
+using Stactive.Core;
+using Stactive.Core.Models;
 using Xunit;
 // ReSharper disable ObjectCreationAsStatement
 

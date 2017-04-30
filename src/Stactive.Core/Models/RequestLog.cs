@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stactive.Models
+namespace Stactive.Core.Models
 {
     public class RequestLog
     {

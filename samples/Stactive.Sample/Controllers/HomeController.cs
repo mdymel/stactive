@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Stactive.Core.Models;
 
 namespace Stactive.Sample.Controllers
 {

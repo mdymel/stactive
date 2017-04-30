@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stactive
+namespace Stactive.Core
 {
     public class StactiveException : Exception
     {

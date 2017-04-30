@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Stactive.MongoDbPersistence;
 using Stactive.Sample.Data;
 using Stactive.Sample.Models;
 using Stactive.Sample.Services;
@@ -43,7 +44,9 @@ namespace Stactive.Sample
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddStactive(options => options.UseMongoDb());
+            services
+                .AddStactive()
+                .AddStactiveMongoPersistance(Configuration.GetConnectionString("StactiveMongoDb"));
 
             services.AddMvc();
 
@@ -69,10 +72,11 @@ namespace Stactive.Sample
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseStactive();
 
             app.UseStaticFiles();
 
+            app.UseStactive();
+            
             app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
