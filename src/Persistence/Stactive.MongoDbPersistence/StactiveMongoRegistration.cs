@@ -6,18 +6,17 @@ namespace Stactive.MongoDbPersistence
 {
     public static class StactiveMiddlewareExtensions
     {
-        public static IServiceCollection AddStactiveMongoPersistance(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddStactiveMongoPersistance(this IServiceCollection services, Action<StactiveMongoOptions> options = null)
         {
             services.AddTransient<IPersistence, MongoDbPersistence>();
+            
+            var stactiveMongoOptions = new StactiveMongoOptions();
+            options?.Invoke(stactiveMongoOptions);
+            services.AddTransient(c => stactiveMongoOptions);
 
-            if (string.IsNullOrEmpty(connectionString)) throw new StactiveException("ConnectionString cannot be empty");
-            MongoDbPersistence.ConnectionString = connectionString;
+            StactiveMongoDb.Initialize(stactiveMongoOptions);
+            services.AddTransient<StactiveMongoDb>();
             return services;
         }
-    }
-
-    public class StactiveMongoOptions
-    {
-        public string ConnectionString { get; set; }
     }
 }

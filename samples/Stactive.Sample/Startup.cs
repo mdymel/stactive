@@ -46,7 +46,8 @@ namespace Stactive.Sample
 
             services
                 .AddStactive()
-                .AddStactiveMongoPersistance(Configuration.GetConnectionString("StactiveMongoDb"));
+                .AddStactiveMongoPersistance(options => 
+                    options.WithConnectionString(Configuration.GetConnectionString("StactiveMongoDb")));
 
             services.AddMvc();
 
