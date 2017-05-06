@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <AssemblyName>Stactive.Persistence.MongoDb</AssemblyName>
+    <RootNamespace>Stactive.Persistence.MongoDb</RootNamespace>
+    <Version>0.1</Version>
+    <Authors>Michał Dymel</Authors>
+    <Company>dymel.pl</Company>
+    <Description>MongoDb persistance for Stactive</Description>
+    <PackageProjectUrl>https://github.com/mdymel/stactive</PackageProjectUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseUrl>https://github.com/mdymel/stactive/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/mdymel/stactive</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
