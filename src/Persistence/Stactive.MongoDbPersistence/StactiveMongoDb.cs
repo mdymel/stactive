@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using Stactive.Core;
+using Stactive.Core.Models;
 
 namespace Stactive.MongoDbPersistence
 {
@@ -12,6 +13,20 @@ namespace Stactive.MongoDbPersistence
         {
             _client = new MongoClient(options.ConnectionString);
             _databaseName = options.DatabaseName;
+
+            CreateIndexes(options);
+        }
+
+        private static void CreateIndexes(StactiveMongoOptions options)
+        {
+            var instance = new StactiveMongoDb();
+            var requestLogs = instance.GetCollection<RequestLog>(options.RequestLogCollectionName);
+
+            requestLogs.Indexes.CreateMany(new[]
+            {
+                new CreateIndexModel<RequestLog>(Builders<RequestLog>.IndexKeys.Ascending(x => x.Url)),
+                new CreateIndexModel<RequestLog>(Builders<RequestLog>.IndexKeys.Ascending(x => x.UserId)),
+            });
         }
 
         public IMongoCollection<T> GetCollection<T>(string collectionName)
