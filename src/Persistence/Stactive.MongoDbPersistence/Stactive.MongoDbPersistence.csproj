@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <AssemblyName>Stactive.Persistence.MongoDb</AssemblyName>
     <RootNamespace>Stactive.Persistence.MongoDb</RootNamespace>
-    <Version>0.1</Version>
+    <Version>0.1.1</Version>
     <Authors>Michał Dymel</Authors>
     <Company>dymel.pl</Company>
     <Description>MongoDb persistance for Stactive</Description>

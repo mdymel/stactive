@@ -10,12 +10,14 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.1</Version>
+    <Version>0.1.1</Version>
     <Authors>Michał Dymel</Authors>
     <Description>Library logging asp.net core requests and events.</Description>
     <PackageProjectUrl>https://github.com/mdymel/stactive</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mdymel/stactive</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/mdymel/stactive/blob/master/LICENSE</PackageLicenseUrl>
+    <AssemblyVersion>0.1.1.0</AssemblyVersion>
+    <FileVersion>0.1.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
